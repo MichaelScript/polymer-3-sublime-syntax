@@ -23,6 +23,12 @@ contexts:
         - match: "html`"
           push: "Packages/HTML/HTML.sublime-syntax"
           with_prototype:
+            - match: \[\[.*\]\]
+              scope: keyword
+            - match: "{{.*}}"
+              scope: keyword
+            - match: "<(/)*template*( |>).*"
+              scope: storage.type
             - match: "`"
               pop: true
 
